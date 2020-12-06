@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\movies-list",
+    "\\movies-list\\src",
+    "\\movies-list\\src\\app",
+    "\\movies-list\\src\\assets",
+    "\\movies-list\\src\\environments",
+    "\\movies-list\\src\\theme"
+  ],
+  "SelectedNode": "\\movies-list\\src\\app\\app.component.html",
+  "PreviewInSolutionExplorer": false
+}
