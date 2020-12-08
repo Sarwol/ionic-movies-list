@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Movie } from 'src/app/interfaces/movie';
+import { Movie } from 'src/app/interfaces/Movie';
 import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
@@ -10,8 +10,7 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class MoviesPage implements OnInit {
 
-  moviesList: any[] = [];
-  search: Object;
+  moviesList: Movie[];
 
   constructor(private movieService : MovieService) { }
 
@@ -19,16 +18,9 @@ export class MoviesPage implements OnInit {
   }
 
   onSearch(event) {
-      this.movieService.getMoviesFromTitle(event.detail.value).subscribe( movies => {
-      this.addMoviesToList(Object.values(movies).filter(movies => movies[0]));
+    this.movieService.getResponseFromTitle(event.detail.value).subscribe( response => {
+      this.moviesList = response.Search;
+      console.log(this.moviesList);
     });
-  }
-
-  filterResults(search){
-    return Object.values(search).filter(search => search[0]);
-  }
-
-  addMoviesToList(movie){
-      this.moviesList.push(movie);
   }
 }
