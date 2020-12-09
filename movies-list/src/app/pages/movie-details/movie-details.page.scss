@@ -1,0 +1,35 @@
+#container{
+    width: 880px;
+}
+.top-block{
+    display: flex;
+    flex-flow: row;
+    margin: 10px;
+}
+.poster{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-left: 15px;
+    width: 400px;
+    height: auto;
+    resize:none;
+}
+
+.information-table{
+    width: 100%;
+}
+
+td {
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+}
+
+.movie-plot{
+    margin: 10px;
+
+}
+
+.rating{
+    margin-top: 5px;
+}

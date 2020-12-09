@@ -1,9 +1,70 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>movieDetails</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app *ngIf="movieSelected">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="movies"></ion-back-button>
+      </ion-buttons>
+      <ion-title> 
+        {{ movieSelected.Title }} ({{movieSelected.Year}}) 
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div class="top-block">
+      <div class="movie-information">
+        <table class="information-table" width="100%" cellspacing="1" cellpadding="3">
+          <tbody>
+            <tr>
+              <td><b>Genre:</b></td>
+              <td>{{movieSelected.Genre}}</td>
+            </tr>
+            <tr>
+              <td><b>Rated:</b></td>
+              <td>{{ movieSelected.Rated }}</td>
+            </tr>
+            <tr>
+              <td><b>Released: </b></td>
+              <td>{{ movieSelected.Released }}</td>
+            </tr>
+            <tr>
+              <td><b>Language: </b></td>
+              <td>{{ movieSelected.Language }}</td>
+            </tr>
+            <tr>
+              <td><b>Country: </b></td>
+              <td>{{ movieSelected.Country }}</td>
+            </tr>
+            <tr>
+              <td><b>Runtime: </b></td>
+              <td>{{ movieSelected.Runtime }}</td>
+            </tr>
+            <tr>
+              <td><b>Rating: </b></td>
+              <td>{{ movieSelected.imdbRating }}</td>
+            </tr>
+            <tr>
+              <td><b>Production: </b></td>
+              <td>{{ movieSelected.Production }}</td>
+            </tr>
+            <tr>
+              <td><b>Director: </b></td>
+              <td>{{ movieSelected.Director }}</td>
+            </tr>
+            <tr>
+              <td><b>Actors: </b></td>
+              <td>{{ movieSelected.Actors }}</td>
+            </tr>
+            <tr class="movie-plot">
+              <td><b>Plot: </b></td>
+              <td> {{ movieSelected.Plot }} </td> 
+            </tr> 
+          </tbody>  
+        </table>
+      </div>
+      <div class="poster">
+        <img class="posterImage" src={{movieSelected.Poster}}>
+      </div>
+    </div>
+  </ion-content>
+</ion-app>
 
-<ion-content>
-
-</ion-content>

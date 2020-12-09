@@ -1,17 +1,21 @@
 <ion-header>
   <ion-toolbar>
-      <ion-title>Lista de Peliculas</ion-title>
+      <ion-title>Movies List</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-searchbar 
-  placeholder="Buscar película" 
+  placeholder="Search movie" 
   (ionChange)="onSearch($event)">
   </ion-searchbar>
   <ion-list>
-      <ion-item *ngFor = "let movie of moviesList"> 
-        {{ movie.Title }}
+      <ion-item button *ngFor = "let movie of moviesList" [routerLink] = "['/', 'movie-details', movie.imdbID]"> 
+        <ion-label text-wrap>
+          <h3>
+            {{ movie.Title }}
+          </h3>
+        </ion-label>
       </ion-item>
   </ion-list>
 </ion-content>
